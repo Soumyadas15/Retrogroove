@@ -4,19 +4,19 @@ import Image from "next/image";
 
 import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
+import LikeButton from "@/components/LikeButton";
 
-import PlayButton from "./PlayButton";
-import LikeButton from "./LikeButton";
+import PlayButton from "@/components/PlayButton";
 
-interface SongItemProps {
+interface LikedItemProps {
   data: Song;
   onClick: (id: string) => void;
 }
 
-const SongItem: React.FC<SongItemProps> = ({
+const LikeItem: React.FC<LikedItemProps> = ({
   data,
   onClick
-}) => {
+}) => {LikeItem
   const imagePath = useLoadImage(data);
 
   return ( 
@@ -76,15 +76,15 @@ const SongItem: React.FC<SongItemProps> = ({
         >
           By {data.author}, {data.year}
         </p>
-        <div className="flex">
+        <div>
             <LikeButton songId={data.id}/>
         </div>
+        
       </div>
-      
       <div 
         className="
           absolute 
-          bottom-35 
+          bottom-30 
           right-6
         "
       >
@@ -94,4 +94,4 @@ const SongItem: React.FC<SongItemProps> = ({
    );
 }
  
-export default SongItem;
+export default LikeItem;
