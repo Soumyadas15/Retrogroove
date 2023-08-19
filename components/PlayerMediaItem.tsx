@@ -57,7 +57,7 @@ const PlayerMediaItem: React.FC<PlayerMediaItemProps> = ({
       >
         <Image
           fill
-          src={"/assets/svg/icon.svg"}
+          src={"/assets/4x/icon.png"}
           alt="MediaItem"
           className={`
             object-cover 

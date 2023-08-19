@@ -41,7 +41,7 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
     };
   }, []);
 
-  const logoFileName = darkMode ? 'logoDark.svg' : 'logoLight.svg';
+  const logoFileName = darkMode ? 'logoDark.png' : 'logoLight.png';
 
 
   const routes = useMemo(() => [
@@ -89,7 +89,7 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
                     <Box>
                         <Image 
                             onClick={() => router.push('/')}
-                            src={`/assets/svg/${logoFileName}`}
+                            src={`/assets/4x/${logoFileName}`}
                             alt='logo' 
                             width={200} 
                             height={200} 
