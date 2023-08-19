@@ -22,7 +22,6 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         className={twMerge(`
              flex
              flex-row
-             bg-[#E0D5B3]
              h-auto
              items-center
              rounded-md
@@ -31,13 +30,13 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
              text-md
              font-medium
              cursor-pointer
-             hover:bg-[#D8C798]
              text-nautral-700
+             dark:text-[#EAC56A]
              p-3
              px-2
              py-1
         `,
-            active && 'bg-[#D66375]')}>
+            active && 'dark:bg-[#5a493b] bg-[#D66375]')}>
         <Icon size={26}/>
         <p className="truncate w-full">{label}</p>
     </Link>);

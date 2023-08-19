@@ -31,7 +31,7 @@ const Search = async ({
         >
             <Header>
                 <div className="mb-2 flex flex-col gap-y-6">
-                    <h1 className="text-black text-3xl font-semibold">
+                    <h1 className="text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold">
                         Search
                     </h1>
                     <SearchInput/>

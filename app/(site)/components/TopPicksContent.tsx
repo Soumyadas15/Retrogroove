@@ -3,6 +3,7 @@
 import { Song } from "@/types";
 import SongItem from "@/components/SongItem";
 import { useEffect, useState } from "react";
+import useOnPlay from "@/hooks/useOnPlay";
 
 interface TopPicksContentProps {
   songs: Song[];
@@ -11,6 +12,7 @@ interface TopPicksContentProps {
 const TopPicksContent: React.FC<TopPicksContentProps> = ({ songs }) => {
   const numRandomSongs = 5; 
   const [randomSongs, setRandomSongs] = useState<Song[]>([]);
+  const onPlay = useOnPlay(songs);
 
   useEffect(() => {
     
@@ -22,7 +24,6 @@ const TopPicksContent: React.FC<TopPicksContentProps> = ({ songs }) => {
       [clone[i], clone[j]] = [clone[j], clone[i]];
     }
 
-    // Select the last numRandomSongs elements after shuffling
     const selectedSongs = clone.slice(-numRandomSongs);
 
     setRandomSongs(selectedSongs);
@@ -52,7 +53,7 @@ const TopPicksContent: React.FC<TopPicksContentProps> = ({ songs }) => {
     >
       {randomSongs.map((item) => (
         <SongItem
-          onClick={() => {}}
+          onClick={(id) => onPlay(id)}
           key={item.id}
           data={item}
         />

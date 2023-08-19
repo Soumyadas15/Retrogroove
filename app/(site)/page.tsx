@@ -3,7 +3,9 @@ import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
 import Image from 'next/image'
 import PageContent from './components/PageContent';
+import EightysDelights from './components/EightysDelights';
 import TopPicksContent from './components/TopPicksContent';
+import MagicalNinetys from './components/EightysDelights copy';
 
 export const revalidate = 0;
 
@@ -22,11 +24,12 @@ export default async function Home() {
           <h1
             className='
             text-[#372133]
+            dark:text-[#EAC56A]
             text-4xl
             font-semibold
             '
           >
-            Timeless classics
+            Go retro!
           </h1>
           <div className='
               grid
@@ -47,15 +50,23 @@ export default async function Home() {
       </Header>
       <div className='mt-2 mb-7 px-6'>
         <div className='flex justify-between items-center'>
-          <h1 className='text-[#372133] text-3xl font-semibold'>
-            90s Greatest Hits
+          <h1 className='text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold'>
+            Delightful 80s
           </h1>
         </div>
-        <TopPicksContent songs={songs}/>
+        <EightysDelights songs={songs}/>
       </div>
       <div className='mt-2 mb-7 px-6'>
         <div className='flex justify-between items-center'>
-          <h1 className='text-[#372133] text-3xl font-semibold'>
+          <h1 className='text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold'>
+            Magical 90s
+          </h1>
+        </div>
+        <MagicalNinetys songs={songs}/>
+      </div>
+      <div className='mt-2 mb-7 px-6'>
+        <div className='flex justify-between items-center'>
+          <h1 className='text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold'>
             Collection
           </h1>
         </div>

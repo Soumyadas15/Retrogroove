@@ -45,10 +45,11 @@ const Library: React.FC<LibraryProps> = ({
                     gap-x-2
                 " 
             >
-                <TbPlaylist size={26} className='text-[#372133]' />
+                <TbPlaylist size={26} className='text-[#372133] dark:text-[#EAC56A]' />
                 <p
                     className='
                         text-[#372133]
+                        dark:text-[#EAC56A]
                         font-medium
                         text-md
                     '
@@ -58,7 +59,7 @@ const Library: React.FC<LibraryProps> = ({
                 </p>
             </div>
             <AiOutlinePlus 
-                className='text-[#372133] hover:text-[#945889] cursor-pointer transition' 
+                className='text-[#372133] dark:text-[#EAC56A] hover:text-[#945889] cursor-pointer transition' 
                 size={26}
                 onClick={onClick}/>
         </div>

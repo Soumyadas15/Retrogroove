@@ -32,6 +32,7 @@ const ListItem: React.FC<ListItemProps> = ({
                 overflow-hidden
                 gap-x-4
                 bg-[#D0C195]
+                dark:bg-[#4c4032]
                 hover:opacity-75
                 transition
                 pr-4
@@ -49,7 +50,7 @@ const ListItem: React.FC<ListItemProps> = ({
                     alt="Image"
                 />
             </div>
-            <p className="text-[#372133] font-medium truncate py-5">
+            <p className="text-[#372133] dark:text-[#EAC56A] font-medium truncate py-5">
                 {name}
             </p>
             <div

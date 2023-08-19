@@ -65,12 +65,14 @@ const Header: React.FC<HeaderProps> = ({
                             flex
                             items-center
                             justify-center
-                            bg-[#D8B182] 
+                            bg-[#D8B182]
+                            dark:bg-[#4c4032]
+                            dark:hover:bg-[#455c4d] 
                             hover:opacity-75
                             transition
                         "
                     >
-                        <RxCaretLeft className='text-[#372133]' size={35}/>
+                        <RxCaretLeft className='text-[#372133] dark:text-[#EAC56A]' size={35}/>
                     </button>
                     <button 
                         onClick={() => router.forward()}
@@ -80,11 +82,13 @@ const Header: React.FC<HeaderProps> = ({
                             items-center
                             justify-center
                             bg-[#D8B182] 
+                            dark:bg-[#4c4032]
                             hover:bg-[#D8C798] 
+                            dark:hover:bg-[#455c4d] 
                             transition
                         "
                     >
-                        <RxCaretRight className='text-[#372133]' size={35}/>
+                        <RxCaretRight className='text-[#372133] dark:text-[#EAC56A]' size={35}/>
                     </button>
                 </div>
                 <div className="flex md:hidden gap-x-2">
@@ -94,13 +98,15 @@ const Header: React.FC<HeaderProps> = ({
                             p-2
                             bg-[#D8B182] 
                             hover:bg-[#D8C798] 
+                            dark:bg-[#4c4032]
+                            dark:hover:bg-[#455c4d] 
                             flex
                             items-center
                             justify-center
                             transition
                         "
                      >
-                        <HiHome size={20} className='text-[#372133]' onClick={() => {router.push('/')}}/>
+                        <HiHome size={20} className='text-[#372133] dark:text-[#EAC56A]' onClick={() => {router.push('/')}}/>
                     </button>
                     <button
                         className="
@@ -108,13 +114,15 @@ const Header: React.FC<HeaderProps> = ({
                             p-2
                             bg-[#D8B182] 
                             hover:bg-[#D8C798] 
+                            dark:bg-[#4c4032]
+                            dark:hover:bg-[#455c4d] 
                             flex
                             items-center
                             justify-center
                             transition
                         "
                      >
-                        <BiSearch size={20} className='text-[#372133]' onClick={() => {router.push('/search')}}/>
+                        <BiSearch size={20} className='text-[#372133] dark:text-[#EAC56A]' onClick={() => {router.push('/search')}}/>
                     </button>  
                 </div>
                 <div className="
@@ -128,15 +136,19 @@ const Header: React.FC<HeaderProps> = ({
                             <Button
                                 onClick={handleLogout}
                                 className="
-                                bg-[#D0C195]
+                                    bg-[#D0C195]
+                                    dark:bg-[#4c4032]
                                     text-[#372133] 
-                                    px-6 py-2"
+                                    dark:text-[#D0C195]
+                                    dark:hover:bg-[#5a493b]
+                                      px-6 
+                                      py-2"
                             >
                                 Logout
                             </Button>
                             <Button
                                 onClick={() => router.push('/account')}
-                                className="bg-[#72C6AA]"
+                                className="bg-[#72C6AA] dark:bg-[#eac56a]"
                             >
                                 <FaUserAlt />
                             </Button>
@@ -148,11 +160,13 @@ const Header: React.FC<HeaderProps> = ({
                                     onClick={authModal.onOpen}
                                     className="
                                     bg-[#D0C195]
-                                        text-[#372133]
-                                        font-medium
-                                        px-6
-                                        py-2
-                                ">
+                                    dark:bg-[#4c4032]
+                                    text-[#372133] 
+                                    dark:text-[#D0C195]
+                                    dark:hover:bg-[#5a493b]
+                                      px-6 
+                                      py-2"
+                                >
                                     Sign up
                                 </Button>
                                 
