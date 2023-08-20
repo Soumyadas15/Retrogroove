@@ -176,6 +176,7 @@ const Header: React.FC<HeaderProps> = ({
                                     onClick={authModal.onOpen}
                                     className="
                                     bg-[#72C6AA]
+                                    dark:bg-[#EAC56A]
                                         text-[#0f241d]
                                         font-medium
                                         px-6
