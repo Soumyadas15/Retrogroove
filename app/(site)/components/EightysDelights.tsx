@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react"; // Import useEffect and useState
 import { Song } from "@/types";
 import SongItem from "@/components/SongItem";
 import useOnPlay from "@/hooks/useOnPlay";
@@ -7,6 +8,7 @@ import useOnPlay from "@/hooks/useOnPlay";
 interface EightysDelightsProps {
   songs: Song[];
 }
+
 
 const shuffleArray = (array: any[]) => {
   const shuffled = [...array];
@@ -20,16 +22,16 @@ const shuffleArray = (array: any[]) => {
 const EightysDelights: React.FC<EightysDelightsProps> = ({ songs }) => {
   const onPlay = useOnPlay(songs);
 
-  const filteredSongs = songs.filter(
-    (song) => song.year >= 1980 && song.year <= 1990
-  );
-  const shuffledSongs = shuffleArray(filteredSongs).slice(0, 5); // Take 5 random songs
+  const [shuffledSongs, setShuffledSongs] = useState<Song[]>([]);
 
-  if (shuffledSongs.length === 0) {
-    return (
-      <div className="mt-4 text-neutral-400">No songs available.</div>
+  useEffect(() => {
+    // Filter and shuffle the songs only once on load
+    const filteredSongs = songs.filter(
+      (song) => song.year >= 1980 && song.year <= 1990
     );
-  }
+    const shuffled = shuffleArray(filteredSongs).slice(0, 5);
+    setShuffledSongs(shuffled);
+  }, []);
 
   return (
     <div
@@ -45,13 +47,17 @@ const EightysDelights: React.FC<EightysDelightsProps> = ({ songs }) => {
         mt-4
       "
     >
-      {shuffledSongs.map((item) => (
-        <SongItem
-          onClick={(id: string) => onPlay(id)}
-          key={item.id}
-          data={item}
-        />
-      ))}
+      {shuffledSongs.length === 0 ? (
+        <div className="mt-4 text-neutral-400">No songs available.</div>
+      ) : (
+        shuffledSongs.map((item) => (
+          <SongItem
+            onClick={(id: string) => onPlay(id)}
+            key={item.id}
+            data={item}
+          />
+        ))
+      )}
     </div>
   );
 };
