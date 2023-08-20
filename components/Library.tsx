@@ -1,6 +1,6 @@
 'use client'
 
-import { TbPlaylist } from 'react-icons/tb'
+import { RiDiscFill } from 'react-icons/ri'
 import { AiOutlinePlus } from 'react-icons/ai'
 
 import { useUser } from '@/hooks/useUser'
@@ -45,7 +45,7 @@ const Library: React.FC<LibraryProps> = ({
                     gap-x-2
                 " 
             >
-                <TbPlaylist size={26} className='text-[#372133] dark:text-[#EAC56A]' />
+                <RiDiscFill size={26} className='text-[#372133] dark:text-[#EAC56A]' />
                 <p
                     className='
                         text-[#372133]
