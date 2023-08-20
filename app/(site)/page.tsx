@@ -6,6 +6,7 @@ import PageContent from './components/PageContent';
 import EightysDelights from './components/EightysDelights';
 import TopPicksContent from './components/TopPicksContent';
 import MagicalNinetys from './components/EightysDelights copy';
+import SeventysDelights from './components/SeventysDelights';
 
 export const revalidate = 0;
 
@@ -51,7 +52,7 @@ export default async function Home() {
       <div className='mt-2 mb-7 px-6'>
         <div className='flex justify-between items-center'>
           <h1 className='text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold'>
-            Delightful 80s
+            Magical 80s
           </h1>
         </div>
         <EightysDelights songs={songs}/>
@@ -59,10 +60,10 @@ export default async function Home() {
       <div className='mt-2 mb-7 px-6'>
         <div className='flex justify-between items-center'>
           <h1 className='text-[#372133] dark:text-[#EAC56A] text-3xl font-semibold'>
-            Magical 90s
+            Delightful 70s
           </h1>
         </div>
-        <MagicalNinetys songs={songs}/>
+        <SeventysDelights songs={songs}/>
       </div>
       <div className='mt-2 mb-7 px-6'>
         <div className='flex justify-between items-center'>
