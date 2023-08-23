@@ -8,14 +8,14 @@ import { useUser } from "@/hooks/useUser";
 import MediaItem from "@/components/MediaItem";
 import LikeButton from "@/components/LikeButton";
 import SongItem from "@/components/SongItem";
-import LikeItem from "./LikeItem";
 import useOnPlay from "@/hooks/useOnPlay";
+import LikeItem from "@/app/liked/components/LikeItem";
 
 interface LikedContentProps {
   songs: Song[];
 };
 
-const LikedContent: React.FC<LikedContentProps> = ({
+const AccountContent: React.FC<LikedContentProps> = ({
   songs
 }) => {
   const router = useRouter();
@@ -64,7 +64,7 @@ const LikedContent: React.FC<LikedContentProps> = ({
                 className="flex items-center gap-x-4 w-full"
                 >
                     <div className="flex-1">
-                        <LikeItem onClick={onPlay} data={song} />
+                        <LikeItem onClick={() => {}} data={song} />
                         {/* <LikeButton songId={song.id} /> */}
                     </div>
                 </div>
@@ -74,5 +74,5 @@ const LikedContent: React.FC<LikedContentProps> = ({
   );
 }
  
-export default LikedContent;
+export default AccountContent;
 
