@@ -14,6 +14,7 @@ import SidebarItem from "./SidebarItem";
 import Box from "./Box";
 import Library from "./Library";
 import { useMemo, useState, useEffect } from "react";
+import { useTheme } from "next-themes"
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -24,25 +25,8 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
   const pathname = usePathname();
   const player = usePlayer();
   const router = useRouter();
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setDarkMode(darkModeMediaQuery.matches);
-
-    const handleDarkModeChange = (event: MediaQueryListEvent) => { // Provide type annotation
-      setDarkMode(event.matches);
-    };
-
-    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
-
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', handleDarkModeChange);
-    };
-  }, []);
-
-  const logoFileName = darkMode ? 'logoDark.png' : 'logoLight.png';
-
+  
 
   const routes = useMemo(() => [
     {
@@ -87,14 +71,24 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
                     gap-y-4
                  '>
                     <Box>
+                      <div>
                         <Image 
                             onClick={() => router.push('/')}
-                            src={`/assets/4x/${logoFileName}`}
+                            src={`/assets/4x/logoLight.png`}
                             alt='logo' 
                             width={200} 
                             height={200} 
-                            className='cursor-pointer'
+                            className='cursor-pointer block dark:hidden'
                             />
+                        <Image 
+                            onClick={() => router.push('/')}
+                            src={`/assets/4x/logoDark.png`}
+                            alt='logo' 
+                            width={200} 
+                            height={200} 
+                            className='cursor-pointer hidden dark:block'
+                            />
+                      </div>
                     </Box>
                 </div>
         <DescBox>
