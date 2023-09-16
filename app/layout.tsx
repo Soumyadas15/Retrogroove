@@ -8,6 +8,8 @@ import ModalProvider from '@/providers/ModalProvider'
 import ToasterProvider from '@/providers/ToasterProvider'
 import getSongsByUserId from '@/actions/getSongsByUserId'
 import Player from '@/components/Player'
+import { ThemeProvider } from '@/providers/ThemeProvider'
+import { cn } from '@/lib/utils'
 
 const font = Figtree({ subsets: ['latin']})
 
@@ -26,15 +28,28 @@ export default async function RootLayout({
   const userSongs = await getSongsByUserId();
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={cn(
+          font.className,
+          font.className,
+          "bg-[#E0D5B3] dark:bg-[#3D3228]"
+        )}>
         <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            storageKey="retrogroove-theme"
+          >
             <ModalProvider />
               <Sidebar songs={userSongs}>
-                {children}
+              
+                  {children}
+                
               </Sidebar>
               <Player />
+          </ThemeProvider>
           </UserProvider>
         </SupabaseProvider>
       </body>

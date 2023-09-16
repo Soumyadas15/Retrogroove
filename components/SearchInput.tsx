@@ -31,7 +31,12 @@ const SearchInput = () => {
       placeholder="Search collections"
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      className="bg-[#D0C195] placeholder:text-neutral-600"
+      className="
+              bg-[#D0C195] 
+              dark:bg-[#5d4e3f]
+              placeholder:text-neutral-600
+              dark:placeholder:text-[#c5bb9d]
+            "
     />
   );
 }

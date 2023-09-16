@@ -11,6 +11,7 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
 import { FaUserAlt } from "react-icons/fa";
 import { toast } from "react-hot-toast";
+import { ModeToggle } from "./ModeToggle";
 
 interface HeaderProps{
     children: React.ReactNode;
@@ -65,10 +66,11 @@ const Header: React.FC<HeaderProps> = ({
                             flex
                             items-center
                             justify-center
-                            bg-[#D8B182]
+                            bg-[#D0C195]
+                            hover:bg-[#cbbb8e]
                             dark:bg-[#4c4032]
-                            dark:hover:bg-[#455c4d] 
-                            hover:opacity-75
+                            dark:hover:bg-[#5a493b] 
+                            
                             transition
                         "
                     >
@@ -81,10 +83,10 @@ const Header: React.FC<HeaderProps> = ({
                             flex
                             items-center
                             justify-center
-                            bg-[#D8B182] 
+                            bg-[#D0C195] 
                             dark:bg-[#4c4032]
-                            hover:bg-[#D8C798] 
-                            dark:hover:bg-[#455c4d] 
+                            hover:bg-[#cbbb8e] 
+                            dark:hover:bg-[#5a493b] 
                             transition
                         "
                     >
@@ -97,9 +99,9 @@ const Header: React.FC<HeaderProps> = ({
                             rounded-md
                             p-2
                             bg-[#D8B182] 
-                            hover:bg-[#D8C798] 
+                            hover:bg-[#cbbb8e] 
                             dark:bg-[#4c4032]
-                            dark:hover:bg-[#455c4d] 
+                            dark:hover:bg-[#5a493b]
                             flex
                             items-center
                             justify-center
@@ -113,9 +115,9 @@ const Header: React.FC<HeaderProps> = ({
                             rounded-md
                             p-2
                             bg-[#D8B182] 
-                            hover:bg-[#D8C798] 
+                            hover:bg-[#cbbb8e] 
                             dark:bg-[#4c4032]
-                            dark:hover:bg-[#455c4d] 
+                            dark:hover:bg-[#5a493b]
                             flex
                             items-center
                             justify-center
@@ -137,6 +139,7 @@ const Header: React.FC<HeaderProps> = ({
                                 onClick={handleLogout}
                                 className="
                                     bg-[#D0C195]
+                                    hover:bg-[#cbbb8e]
                                     dark:bg-[#4c4032]
                                     text-[#372133] 
                                     dark:text-[#D0C195]
@@ -152,6 +155,9 @@ const Header: React.FC<HeaderProps> = ({
                             >
                                 <FaUserAlt />
                             </Button>
+                            <div>
+                                <ModeToggle/>
+                            </div>
                         </div>
                     ) : (
                         <>
@@ -160,6 +166,7 @@ const Header: React.FC<HeaderProps> = ({
                                     onClick={authModal.onOpen}
                                     className="
                                     bg-[#D0C195]
+                                    hover:bg-[#cbbb8e]
                                     dark:bg-[#4c4032]
                                     text-[#372133] 
                                     dark:text-[#D0C195]
@@ -184,6 +191,9 @@ const Header: React.FC<HeaderProps> = ({
                                 ">
                                     Log In
                                 </Button>
+                            </div>
+                            <div>
+                                <ModeToggle/>
                             </div>
                         </>
                     )}
