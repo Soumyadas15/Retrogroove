@@ -11,11 +11,11 @@ import useAuthModal from "@/hooks/useAuthModel";
 import { Heart } from "lucide-react";
 
 
-interface LikeButtonProps {
+interface PlayerLikeButtonProps {
   songId: string;
 };
 
-const LikeButton: React.FC<LikeButtonProps> = ({
+const PlayerLikeButton: React.FC<PlayerLikeButtonProps> = ({
   songId
 }) => {
   const router = useRouter();
@@ -103,11 +103,11 @@ const LikeButton: React.FC<LikeButtonProps> = ({
         
         size={25} 
         className={`
-          ${isLiked ? 'text-[#FB5252]' : 'dark:text-[#EAC56A] text-[#372133]'}
+          ${isLiked ? 'text-[#FB5252]' : 'text-[#EAC56A]'}
         `}
       />
     </button>
   );
 }
 
-export default LikeButton;
+export default PlayerLikeButton;

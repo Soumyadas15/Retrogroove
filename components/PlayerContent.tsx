@@ -14,6 +14,7 @@ import LikeButton from "./LikeButton";
 import MediaItem from "./MediaItem";
 import Slider from "./Slider";
 import PlayerMediaItem from "./PlayerMediaItem";
+import PlayerLikeButton from "./PlayerLikeButton";
 
 
 interface PlayerContentProps {
@@ -177,7 +178,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         <div className="flex w-full justify-start">
           <div className="flex items-center gap-x-4">
             <PlayerMediaItem data={song} isPlaying={isPlaying} />
-            <LikeButton songId={song.id} />
+            <PlayerLikeButton songId={song.id} />
           </div>
         </div>
 
