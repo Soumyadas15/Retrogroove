@@ -37,7 +37,7 @@ const Search = async ({
                     <SearchInput/>
                 </div>
             </Header>
-            <SearchContent songs={songsAuthor}/>
+            <SearchContent songs={songsTitle}/>
         </div>
     )
 }
